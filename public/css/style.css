@@ -1,0 +1,220 @@
+/* Css Bevicred
+* Author: Guilherme Cunha
+*/
+/* COLORS
+* color azul dark: #0d4786
+* color azul: #08d0d7
+*/
+html,body {
+    margin: 0;
+    padding: 0;
+}
+.navbar-brand > img {
+    width: 50px;
+}
+/* login screen */
+.login {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+.login-background {
+    background-image: url('../images/background.jpg');
+    background-attachment: fixed;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    float: left;
+    width: 50%;
+    height: 1020px;
+}
+.content-all{
+    padding-top: 50%;
+    width: 100%;
+    height: auto;
+}
+.content-all h2 {
+    color: #ffffff;
+    text-align: center;
+}
+.content-all  a {
+    width: 130px;
+    margin: 0 auto;
+    display: block;
+    
+}
+.login-form-bg {
+    padding:20px;
+    float: right;
+    width: 50%;
+    height: 100%;
+    background-color: #ffffff;
+}
+.login-form {
+    margin: 20% auto;
+}
+.logo {
+    width: 100%;
+    margin-bottom: 60px;
+    padding: 10px;
+}
+.logo > img {
+    width: 300px;
+    margin:0 auto;
+    display: block;
+}
+/* Buttons and forms */
+.btn {
+    border-radius: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.btn-places {
+    /* background: linear-gradient(to bottom right, #a95ee9, #1041a6); */
+    background: linear-gradient(to bottom right, #08d0d7, #0d4786);
+    color: #ffffff;
+}
+.btn-places:hover {
+    background: linear-gradient(to bottom right, #0d4786, #08d0d7);
+    transition: all ease 1s;
+    color: #ffffff;
+}
+.btn-white {
+    background-color: #ffffff;
+    color: #0d4786;
+}
+.btn-delete {
+    background-color: #b32b2b;
+    color:#ffffff;
+}
+.btn-delete:hover {
+    background-color: #751515;
+    color:#ffffff;
+    transition: all ease 1s;
+}
+.form-control:focus {
+    border-color: #0d4786 !important;
+    box-shadow: 0 1px 1px transparent inset, 0 0 8px transparent !important;
+}
+/* navbar and menu */
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 250px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background-image: url(../images/side_bar_bg.png);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+#page-content {
+    width: 100%;
+    padding: 15px;
+    background-color: #f8f8f8;
+}
+#page-content h2 {
+    color: #0d4786;
+}
+.navbar-brand {
+    height: 55px !important;
+    padding: 12px 12px !important;
+}
+.navbar-brand > img {
+    width: 30px;
+}
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    border-left: 4px solid #33AF99;
+    background: rgba(255, 255, 255, 0.2);
+    transition: ease all 0.5s;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 55px;
+    font-size: 18px;
+    line-height: 60px;
+}
+.sidebar-nav > .sidebar-brand a {
+    color: #999999;
+}
+.sidebar-nav > .sidebar-brand img {
+    width: 190px;
+    margin-bottom: 15px;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+.navbar-places {
+    width: 100%;
+    height: 60px;
+}
+.nav-item a {
+    color: #ffffff;
+}
+.bg-places {
+    background: linear-gradient(to bottom right, #08d0d7, #0d4786);
+}
+.nav-item a {
+    font-size: 16px;
+}
+.dropdown-menu a {
+    color: #3f0a6d;
+}
+/* pages structure */
+.card {
+    margin: 0 auto !important;
+    display: block !important;
+}
+.card h2{
+    color: #0d4786;
+}
