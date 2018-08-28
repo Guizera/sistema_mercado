@@ -29,6 +29,7 @@ class MercadoController extends Controller
             'preco_produto' => 'required',
             'disponibilidade' => 'required',
         ]);
+        //esse metodo serve para gravar produtos
         Mercados::create($request::all());
 
         return redirect()->back()->with('message', 'Produto cadastrado com sucesso');
