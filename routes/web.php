@@ -25,15 +25,15 @@ Auth::routes();
 $this->get('/verify-user/{code}', 'Auth\RegisterController@activateUser')->name('activate.user');
 
 
-Route::get('/home', 'BevicredController@index');
+Route::get('/home', 'MercadoController@index');
 
-Route::get('/novo', 'BevicredController@novo');
+Route::get('/novo', 'MercadoController@novo');
 
-Route::post('/adicionar', 'BevicredController@adicionar');
+Route::post('/adicionar', 'MercadoController@adicionar');
 
-Route::get('/editar/{id}', 'BevicredController@editar');
+Route::get('/editar/{id}', 'MercadoController@editar');
 
-Route::put('/update/{id}', 'BevicredController@update');
+Route::put('/update/{id}', 'MercadoController@update');
 
-Route::delete('/destroy/{id}', 'BevicredController@destroy');
+Route::delete('/destroy/{id}', 'MercadoController@destroy');
 
