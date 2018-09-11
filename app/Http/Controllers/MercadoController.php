@@ -57,6 +57,7 @@ class MercadoController extends Controller
         return view();
 
     }
+    //TESTE PARA VER SE DA PUSH--GUSTAVO
     //nesse metodo aqui é um POST aqui fazemos a ação
     //o que vai ser feito dentro da tela de editar, entao o que vai precisar ser feito
     //1 precisamos validar os campos que vai ter dentro do formulario de editar
