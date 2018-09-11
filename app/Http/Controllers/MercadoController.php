@@ -70,8 +70,16 @@ class MercadoController extends Controller
      * params $id
      * esse sao os parametros que precisam ser passados
      */
-    public function update() {
-
+    public function update(Request $request, $id) {
+        request()->validate([
+            'nome_produto' => 'required',
+            'tipo_produto'=> 'required',
+            'preco_produto' => 'required',
+            'disponibilidade' => 'required',
+        ]);
+        $produto = produtos::find($id);
+        $update = $produto::update($request);
+        return redirect()->back()->with('message', 'Produto Alterado com sucesso');
     }
     //nesse metodo vamos deletar um produto
     //seguindo a logica de que estamos trabalhando novamente com um produtos em especifico, precisamos do ID novamente
@@ -81,8 +89,9 @@ class MercadoController extends Controller
     /**
      * params $id
      */
-    public function destroy() {
-
+    public function destroy($id) {
+        $produto = produtos::destroy($id);
+        return redirect()->back()->with('message', 'Produto Deletado com sucesso');
     }
     //metodo que var trazer todos os produtos em formato de JSON lembrando que o app só consiguira ler o app se tiver esse retorno JSON
     //como fazer?
@@ -93,15 +102,19 @@ class MercadoController extends Controller
     /**
      * exemplos de select
      * podemos usar como no primeiro metodo $variavel = produtos:all() 'com isso estamos chamando todos registros do banco'
-     * podemos usar tambem assim $variavel = DB::table('tabela') 'caso tenha condições como um WHERE etc... usamos o seta ('tabela')->where(); mas nao estamos trabalhando com produtos especificos entao nao tem WHERE
+     * podemos usar tambem assim $variavel = DB::table('tabela') 'caso tenha condições como um WHERE etc... usamos o seta 
+     * ('tabela')->where(); mas nao estamos trabalhando com produtos especificos entao nao tem WHERE
      * ou podemos usar o jeito BRUTO $variavel  = "SELECT * FROM tabela"
      * aconselho o primeiro ou façam os 3 e testam
      * e esse metodo precisa tem uma resposta? como?
-     * return response()->json($variavel); essa variavel é a variavel que vai receber a consulta que faremos, o select vai ser salvo em um variavel na memoria entao a resposta que vamos passa é ela
+     * return response()->json($variavel); essa variavel é a variavel que vai receber a consulta que faremos, o select vai
+     *  ser salvo em um variavel na memoria entao a resposta que vamos passa é ela
      * 
      */
     public function listJson() {
+        $produtos = produtos::all();
 
+        return response()->json($produtos);
     }
     //leiam os comentario é importante, hahahaha!
     //duvidas chamem eu
