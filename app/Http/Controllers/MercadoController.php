@@ -54,7 +54,7 @@ class MercadoController extends Controller
         $produto = produtos::find($id);
 
         //retorne aqui a tela que sera apresentado logo apos eu apresentar o produtos junto com ele o ID
-        return view();
+        return view('content.editar',compact('produto'));
 
     }
     //TESTE PARA VER SE DA PUSH--GUSTAVO
