@@ -37,3 +37,6 @@ Route::put('/update/{id}', 'MercadoController@update');
 
 Route::delete('/destroy/{id}', 'MercadoController@destroy');
 
+Route::get('/listaTodosProdutos', 'MercadoController@listaTodosProdutos');
+
+Route::get('/listaUmProduto/{id}', 'MercadoController@listaUmProduto');

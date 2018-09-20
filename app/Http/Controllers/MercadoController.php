@@ -112,10 +112,16 @@ class MercadoController extends Controller
      *  ser salvo em um variavel na memoria entao a resposta que vamos passa é ela
      * 
      */
-    public function listJson() {
+    public function listaTodosProdutos() {
         $produtos = produtos::all();
 
         return response()->json($produtos);
+    }
+
+    public function listaUmProduto($id){
+        $produto = produtos::find(id);
+        
+        return response()->json($produto);
     }
     //leiam os comentario é importante, hahahaha!
     //duvidas chamem eu
