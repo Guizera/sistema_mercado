@@ -13,7 +13,7 @@
               {{ session()->get('message') }}
             </div>
           @endif
-                   <form method="POST" action="{{ route('register') }}">
+                   <form method="POST" action="{{ url('postRegister') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group row{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -96,7 +96,7 @@
                 <div class="content-all">
                     <div class="content">
                         <h2>Já possui uma conta?</h2>
-                            <a href="{{ route('login') }}" class="btn btn-white">{{__('Entrar')}}</a>
+                            <a href="{{ url('login') }}" class="btn btn-white">{{__('Entrar')}}</a>
                     </div>          
                 </div>
             </div>

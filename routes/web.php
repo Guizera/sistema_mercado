@@ -15,15 +15,26 @@
 //     return view('welcome');
 // });
 
-Auth::routes();
+//Auth::routes();
 
 //metodo esta resolvido, das rotas esta funcionando localhost/login para iniciar a aplicação ou utitlizando no proprio terminal do VS CODE
 //digitando o comando php artisan serve ele ja inicia a aplicação
 
 //Route::get('/login', 'Auth/LoginController@showLoginForm')->name('login');
 
-$this->get('/verify-user/{code}', 'Auth\RegisterController@activateUser')->name('activate.user');
+//$this->get('/verify-user/{code}', 'Auth\RegisterController@activateUser')->name('activate.user');
 
+Route::get('/', 'HomeController@index');
+
+Route::get('/register','RegisterController@getRegister');
+
+Route::post('/postRegister','RegisterController@postRegister');
+
+Route::get('/login', 'LoginController@getLogin');
+
+Route::post('/postLogin', 'LoginController@postLogin');
+
+Route::get('/logout', 'LoginController@Logout');
 
 Route::get('/home', 'MercadoController@index');
 
@@ -40,3 +51,6 @@ Route::delete('/destroy/{id}', 'MercadoController@destroy');
 Route::get('/listaTodosProdutos', 'MercadoController@listaTodosProdutos');
 
 Route::get('/listaUmProduto/{id}', 'MercadoController@listaUmProduto');
+
+
+

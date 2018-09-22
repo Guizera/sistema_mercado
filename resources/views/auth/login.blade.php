@@ -8,22 +8,22 @@
                <div class="logo">
                    <img src="{{ asset('images/logo-bevicred.png') }}" alt="logo Places"/>
                </div>
-                <form method="POST" action="{{ route('login') }}">
+                <form method="POST" action="{{ url('postLogin') }}">
                         {{ csrf_field() }}
                         @if(session()->has('login_error'))
                         <div class="alert alert-danger">
                             {{ session()->get('login_error') }}
                         </div>
                         @endif
-                        <div class="form-group row{{ $errors->has('identity') ? ' has-error' : '' }}">
-                            <label for="identity" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
+                        <div class="form-group row{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
 
                             <div class="col-md-6">
-                                <input id="identity" type="identity" class="form-control" name="identity" value="{{ old('identity') }}" placeholder="exemplo@email.com" required autofocus>
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="exemplo@email.com" required autofocus>
 
-                                @if ($errors->has('identity'))
+                                @if ($errors->has('email'))
                                     <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('identity') }}</strong>
+                                        <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -47,7 +47,7 @@
                             <div class="col-md-6 offset-md-4">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Lembrar login!') }}
+                                        
                                     </label>
                                 </div>
                             </div>
@@ -59,9 +59,6 @@
                                     {{ __('Entrar') }}
                                 </button>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Esqueceu a senha?') }}
-                                </a>
                             </div>
                         </div>
                     </form>
@@ -73,7 +70,7 @@
             <div class="content-all">
                 <div class="content">
                     <h2>Ainda não tem login?</h2>
-                        <a href="{{ route('register') }}" class="btn btn-white">{{__('Cadastrar')}}</a>
+                        <a href="{{ url('register') }}" class="btn btn-white">{{__('Cadastrar')}}</a>
                 </div>          
             </div>
         </div>

@@ -25,7 +25,7 @@
                     <a href="{{ url('/editar', $cliente->id) }}" class="btn btn-places">Editar</a>
                 </td>
                 <td>
-                    <form action="{{ action('BevicredController@destroy', $cliente->id) }}" method="POST">
+                    <form action="{{ action('MercadoController@destroy', $cliente->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-delete">Deletar</button>
