@@ -9,7 +9,7 @@
                        <img src="{{ asset('images/logo-bevicred.png') }}" alt="logo Places"/>
                    </div>
                    @if(session()->has('message'))
-            <div class="alert alert-success">
+            <div class="alert alert-danger">
               {{ session()->get('message') }}
             </div>
           @endif
