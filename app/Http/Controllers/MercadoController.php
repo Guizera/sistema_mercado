@@ -119,10 +119,12 @@ class MercadoController extends Controller
     }
 
     public function listaUmProduto($id){
-        $produto = produtos::find(id);
+        $produtos = produtos::find(id);
         
-        return response()->json($produto);
+        return response()->json($produtos);
     }
     //leiam os comentario é importante, hahahaha!
     //duvidas chamem eu
 }
+//var_dump($produtos);
+//die();

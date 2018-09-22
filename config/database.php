@@ -46,7 +46,7 @@ return [
             'database' => env('DB_DATABASE', 'osten023_mercados'),
             'username' => env('DB_USERNAME', 'osten023_guizera'),
             'password' => env('DB_PASSWORD', 'gui22129012'),
-            'unix_socket' => env('DB_SOCKET', '/Applications/MAMP/tmp/mysql/mysql.sock'),
+            'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
