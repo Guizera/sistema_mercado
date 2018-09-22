@@ -52,7 +52,7 @@ class RegisterController extends Controller {
         $user                             = app(User::class)->create($validatedData);
     } catch (\Exception $exception) {
         logger()->error($exception);
-        return redirect()->back()->with('message', 'Unable to create new user.');
+        return redirect()->back()->with('message', 'Não foi possivel criar o usuario.');
     }
     $user->notify(new UserRegisteredSuccessfully($user));
     return redirect()->back()->with('message', 'Successfully created a new account. Please check your email and activate your account.');
